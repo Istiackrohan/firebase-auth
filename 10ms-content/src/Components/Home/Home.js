@@ -1,6 +1,5 @@
 import React from 'react';
 import useAuth from '../Firebase/useAuth';
-// import useFirebase from '../Firebase/useFirebase';
 
 const Home = () => {
 
