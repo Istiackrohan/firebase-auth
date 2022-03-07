@@ -14,9 +14,15 @@ function App() {
       <AuthProvider>
         <PrimarySearchAppBar></PrimarySearchAppBar>
         <Routes>
-          {/* <PrivateRoute path="/home"/> */}
-          <Route exact path="/" element={<Home />} />
-          <Route path="/home" element={<Home />} />
+          <Route
+            path="/"
+            element={
+              <PrivateRoute>
+                <Home />
+              </PrivateRoute>
+            }>
+          </Route>
+          <Route exact path="/home" element={<Home />} />
           <Route path="/contents" element={<Content />} />
           <Route path="/sign-in" element={<SignIn />} />
           <Route path="/sign-up" element={<SignUp />} />

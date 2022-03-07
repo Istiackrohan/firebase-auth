@@ -1,15 +1,15 @@
 import React from 'react';
-import { Route, Navigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import useAuth from '../Firebase/useAuth';
 
 const PrivateRoute = ({ children, ...rest }) => {
     const { user } = useAuth();
+    console.log(user.name)
     return (
-        <Route path="/sign-in" element=
-            {user.email ? children :
-                <Navigate {...rest} to="/home" replace />
+        <>
+            {user.email ? children : <Navigate to="/sign-in" replace />
             }
-        />
+        </>
     );
 };
 
